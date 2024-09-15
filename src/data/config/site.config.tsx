@@ -5,7 +5,7 @@ export const DATA = {
   initials: "0xSabdadev",
   url: "https://oxsabdadev.xyz",
   resume: "https://drive.google.com/file/d/1qt6QI2wnQkcykeSDPX7ByrFZ3ZjLaFfR/view?usp=sharing",
-  prevImage: "https://i.imgur.com/zTtzvAu.png",
+  prevImage: "/prev.png",
   myImage: "/buildspace.jpg",
   location: "Jakarta, Indonesia",
   locationLink: "https://maps.app.goo.gl/DPRcouZjgvTDHxb49",
