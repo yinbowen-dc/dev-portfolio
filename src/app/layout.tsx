@@ -10,6 +10,7 @@ import BottomNavbar from "@/components/bottom-navbar";
 import { ScheduleCallFloat } from "@/components/cal";
 import { Analytics } from "@vercel/analytics/react"
 import { Toaster } from "@/components/ui/sonner";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -108,6 +109,7 @@ export default function RootLayout({
               <TopNavbar />
             </div>
             {children}
+            <SpeedInsights />
             <div className="block md:hidden">
               <BottomNavbar />
             </div>
