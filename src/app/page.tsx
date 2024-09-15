@@ -372,7 +372,7 @@ export default function Page() {
                 blockchain, crypto, and all things decentralized. No spam, just
                 straight-up web3 vibes.
               </p>
-              <div className="pt-10 flex flex-col sm:flex-row ">
+              <div className="pt-10 flex flex-row ">
                 {/* Name Input */}
                 <div className="sm:w-1/3 w-full">
                   <PlaceholdersAndVanishInput
@@ -386,7 +386,7 @@ export default function Page() {
                     triggerDisappear={triggerDisappear}
                   />
                 </div>
-                <div className="sm:w-2/3 w-full mt-4 sm:mt-0">
+                <div className="sm:w-2/3 w-full mt-0">
                   <PlaceholdersAndVanishInput
                     type="text"
                     placeholders={placeholders}

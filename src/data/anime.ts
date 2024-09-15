@@ -9,7 +9,7 @@ export interface Anime {
 export const AnimeData: Anime[] = [
   {
     title: "Naruto",
-    href: "https://myanimelist.net/anime/339/Serial_Experiments_Lain",
+    href: "https://myanimelist.net/anime/1735/Naruto__Shippuuden",
     imgName: "nrt",
     starred: true,
   },
@@ -21,7 +21,7 @@ export const AnimeData: Anime[] = [
   },
   {
     title: "Boku no Hero Academia",
-    href: "https://myanimelist.net/anime/6547/Angel_Beats",
+    href: "https://myanimelist.net/anime/31964/Boku_no_Hero_Academia",
     imgName: "bokhero",
   },
   {
