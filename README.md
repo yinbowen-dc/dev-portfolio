@@ -1,5 +1,5 @@
 <div align="center">
-<img alt="preview" src="https://github.com/SkidGod4444/portfolio/blob/main/public/prev.png" width="90%">
+<img alt="preview" src="" width="90%">
 </div>
 
 # Portfolio [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSkidGod4444%2Fportfolio)
@@ -19,7 +19,7 @@ Built with next.js, [loops](https://loops.so/), [shadcn/ui](https://ui.shadcn.co
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/SkidGod4444/portfolio
+   git clone https://github.com/
    ```
 
 2. Move to the cloned directory
