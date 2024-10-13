@@ -4,7 +4,7 @@ export const DATA = {
   name: "Jason Riskova",
   initials: "0xSabdadev",
   url: "https://oxsabdadev.vercel.app",
-  resume: "https://drive.google.com/file/d/1qt6QI2wnQkcykeSDPX7ByrFZ3ZjLaFfR/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1XobsqXBKZi8xdjZLbAgeaEDRGIYO3p3x/view?usp=sharing",
   prevImage: "/prev.png",
   myImage: "/buildspace.jpg",
   location: "Jakarta, Indonesia",
