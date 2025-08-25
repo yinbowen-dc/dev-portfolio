@@ -21,11 +21,11 @@ export default function About() {
           delay={BLUR_FADE_DELAY}
           className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-5xl/none"
           yOffset={8}
-          text={`Yo, I'm ${DATA.name} 🚀`}
+          text={`Bro, I'm ${DATA.name} 🍾`}
         />
         <BlurFade delay={BLUR_FADE_DELAY * 2}>
           <p className="text-lg text-muted-foreground mb-6">
-            Welcome to my decentralized zone. Stoked you found your way here!
+            In this Web2 domain, I will demonstrate my path of development.
           </p>
         </BlurFade>
 
@@ -42,7 +42,7 @@ export default function About() {
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <h2 className="text-xl font-bold">Brain Boost 学</h2>
+            <h2 className="text-xl font-bold">Educational Background</h2>
           </BlurFade>
           {DATA.education.map((education, id) => (
             <BlurFade
@@ -63,10 +63,10 @@ export default function About() {
           ))}
         </div>
       </section>
-      <section id="work">
+      <section id="">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-xl font-bold">Grindin' & Hustlin' 仕</h2>
+            <h2 className="text-xl font-bold">Work Expierence</h2>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 14}>
             <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
@@ -90,9 +90,11 @@ export default function About() {
           </BlurFade>
         </div>
       </section>
+      {/* todo 这里放一些我看的书 */}
+      {/*  */}
       <section id="anime">
         <BlurFade delay={BLUR_FADE_DELAY * 15}>
-            <h2 className="text-xl font-bold">Anime Feels 好</h2>
+            <h2 className="text-xl font-bold">Life Movie</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 16}>
           <AnimeCards/>
@@ -100,7 +102,7 @@ export default function About() {
       </section>
       <section id="connect">
         <BlurFade delay={BLUR_FADE_DELAY * 17}>
-          <h2 className="text-xl font-bold">Slide into My DMs 繋 </h2>
+          <h2 className="text-xl font-bold">Call me</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 18}>
           <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert text-justify">

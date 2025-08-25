@@ -5,7 +5,7 @@ export const GHLink = () => {
   return (
     <a
       className="relative h-full w-full group flex flex-col justify-between overflow-hidden rounded-2xl text-white transform-gpu transition-all duration-500 will-change-[outline,_transform] group-hover:scale-95 active:scale-100 hover:scale-95"
-      href="http://github.com/0xSabdadev"
+      href="https://github.com/yinbowen-dc"
       target="_blank"
     >
       <span

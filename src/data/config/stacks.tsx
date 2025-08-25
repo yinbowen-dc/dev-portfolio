@@ -39,6 +39,13 @@ import {
   SiGraphql,
   SiSolana,
   SiCodeigniter,
+  SiPython,
+  SiSparkar,
+  SiApachespark,
+  SiApacheflink,
+  SiApachehive,
+  SiApachekafka,
+  SiClickhouse,
 } from "react-icons/si";
 import { FaEthereum } from "react-icons/fa";
 import Flowbite from "@/svgs/flowbite";
@@ -55,21 +62,21 @@ export const STACKS: stacksProps = {
   TypeScript: <SiTypescript size={iconSize} color="#60A5FA" />, // blue-400
   Dart: <SiDart size={iconSize} color="#60A5FA" />, // blue-400
   Go: <SiGo size={iconSize} color="#60A5FA" />, // blue-400
-  Solidity: <SiSolidity size={iconSize} color="#8C8C8C" />, // gray-500
+  Python: <SiPython size={iconSize} color="#60A5FA" />, // blue-400
+
   Rust: <SiRust size={iconSize} color="#DEA584" />, // rust color
 
-  // Web3 and Blockchain
-  Ethereum: <SiEthereum size={iconSize} color="#3C3C3D" />, // ethereum color
-  EVM: <FaEthereum size={iconSize} color="#627EEA" />, // EVM icon, using Ethereum color
-  Solana: <SiSolana size={iconSize} color="#00FFA3" />, // solana green
-  IPFS: <SiIpfs size={iconSize} color="#65C2CB" />, // cyan-400
-  GraphQL: <SiGraphql size={iconSize} color="#E535AB" />, // pink-500
+  // Big Data Technology
+  Spark: <SiApachespark size={iconSize} color="#F7DF1E" />,
+  Flink: <SiApacheflink size={iconSize} color="#F7DF1E" />,
+  Clikhouse: <SiClickhouse size={iconSize} color="#F7DF1E" />,
+  Kafka: <SiApachekafka size={iconSize} color="#F7DF1E" />,
+  Hive: <SiApachehive size={iconSize} color="#F7DF1E" />,
 
   // Mobile Frameworks
   Android: <SiAndroid size={iconSize} color="#16A34A" />,
   Java: <FaJava size={iconSize} color="#DC2626" />,
   Flutter: <SiFlutter size={iconSize} color="#60A5FA" />,
-  GetX: <SiGetx size={iconSize} color="#A855F7" />,
 
   // Frontend Frameworks
   "Next.js": <SiNextdotjs size={iconSize} />,
@@ -89,11 +96,6 @@ export const STACKS: stacksProps = {
   Express: <SiExpress size={iconSize} />,
   "Codeigniter": <SiCodeigniter size={iconSize} color="#DC2626" />, // red-600
   "Nest.js": <SiNestjs size={iconSize} color="#DC2626" />, // red-600
-  Prisma: <SiPrisma size={iconSize} color="#10B981" />, // emerald-500
-  Firebase: <SiFirebase size={iconSize} color="#F59E0B" />, // yellow-500
-  Supabase: <SiSupabase size={iconSize} color="#22C55E" />, // green-500
-  Jest: <SiJest size={iconSize} color="#DC2626" />, // red-600
-  Gorm: <SiGo size={iconSize} color="#60A5FA" />, // blue-400
   Redis: <SiRedis size={iconSize} color="#DC2626" />, // red-600
 
   // Others
@@ -101,8 +103,6 @@ export const STACKS: stacksProps = {
   Nginx: <SiNginx size={iconSize} color="#22C55E" />, // green-500
   Docker: <SiDocker size={iconSize} color="#93C5FD" />, // blue-300
   Jenkins: <SiJenkins size={iconSize} />,
-  Gemini: <SiGooglegemini size={iconSize} />,
-  AOSP: <SiCircle size={iconSize} />,
   Linux: <SiLinux size={iconSize} />,
   Figma: <SiFigma size={iconSize} />,
 };

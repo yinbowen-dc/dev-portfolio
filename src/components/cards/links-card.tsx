@@ -1,11 +1,12 @@
 import { RiTwitterXFill } from "@/components/icons/twitter";
 import { CalendarDays, Linkedin } from "lucide-react";
+import { DATA } from "@/data/config/site.config";
 
 export const LinksCard = () => {
   return (
     <div className="flex gap-2">
       <a
-        href="http://linkedin.com/in/jasonalhilal"
+        href={DATA.contact.social.LinkedIn.url}
         target="_blank"
         className="hover:scale-95 duration-500 transform-gpu h-[4.125rem] flex flex-col justify-center items-center rounded-lg text-white bg-[#2867b2] w-full "
       >
@@ -15,7 +16,7 @@ export const LinksCard = () => {
         </p>
       </a>
       <a
-        href="http://x.com/0xSabdadev"
+        href={DATA.contact.social.X.url}
         target="_blank"
         className="hover:scale-95 duration-500 transform-gpu h-[4.125rem] flex flex-col justify-center items-center rounded-lg text-white bg-[#1c1d1f] w-full"
       >

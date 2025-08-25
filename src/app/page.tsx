@@ -83,6 +83,7 @@ export default function Page() {
 
   const [hovering, setHovering] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
+  // 框词轮播
   const placeholders = [
     "Send message to 0xSabdadev",
     "Connect to the decentralized future",
@@ -161,7 +162,7 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-5xl/none"
                 yOffset={8}
-                text={`や, I'm ${DATA.name.split(" ")[0]} 🥷`}
+                text={`Hey,Bro, I'm ${DATA.name.split(" ")[0]} `}
               />
               <BlurFadeText
                 className="max-w-[600px] md:text-xl mt-4"
@@ -205,7 +206,7 @@ export default function Page() {
       </section>
       <section id="bio">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold mb-1 md:mb-0">About • 約</h2>
+          <h2 className="text-xl font-bold mb-1 md:mb-0">For You Information</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
           <Markdown className="prose max-w-full text-pretty font-sans text-[14px] md:text-md text-muted-foreground dark:prose-invert text-justify">
@@ -229,25 +230,42 @@ export default function Page() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  Fresh Drops ㊗️
+                  📢 Blog News
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Spillin' thoughts on tech, life, and the decentralized future
+                  Sharing thoughts on
+                  <br></br>Tech, Life, Wealth, Travel
                 </h2>
                 <p className="text-muted-foreground md:text-lg/relaxed lg:text-lg/relaxed xl:text-lg/relaxed">
-                  Code, blockchain, and everything in between – I'm always
-                  vibin' on new ideas. Maybe you'll stumble across something
-                  fire. Check out my freshest takes below, or dive deep on my{" "}
+                  At the current stage of website development, I'm building my own MVP, aiming to create a mobile app 
+                  that allows me to record my thoughts anytime, anywhere. 
+                  My primary work involves APP traffic analysis and traffic shaping. 
+                  Specifically, I use big data technologies (such as Spark, Flink, and Kafka) 
+                  to process TB and PB-level data for real-time signal analysis, helping algorithms better 
+                  understand user intent. Additionally, through offline analysis, I assist businesses in 
+                  understanding their functional data status more clearly. This includes tasks such as building
+                  user profiles for personalized recommendation systems tailored to individual users.
+                  If you're interested in my work, you can follow my updates on Medium & Juejin (Chinese tech community platform).
+                  However, please note that as of August 25, 2025, my Medium page remains empty.
+                  {" "}
                   <Link href="/blog" className="text-blue-500 hover:underline">
                     blog page{" "}
                   </Link>
                   or{" "}
                   <Link
-                    href="https://jasonalhilal.medium.com/"
+                    href="https://medium.com/@gaiyuluo"
                     target="_blank"
                     className="text-blue-500 hover:underline"
                   >
                     Medium
+                  </Link>
+                  or 
+                  <Link
+                    href="https://juejin.cn/user/3892711776064952"
+                    target="_blank"
+                    className="text-blue-500 hover:underline"
+                  >
+                    juejin
                   </Link>
                   .
                 </p>
