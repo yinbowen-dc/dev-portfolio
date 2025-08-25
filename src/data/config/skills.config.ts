@@ -1,5 +1,18 @@
 export const SKILLS = [
   {
+    category: "Big Data",
+    technologies: [
+      "Data Model",
+      "Data Warehouse",
+      "Flink",
+      "Spark",
+      "Hive",
+      "Clickhouse",
+      "Hudi",
+      "Kafka",
+    ], 
+  },
+  {
     category: "Frontend",
     technologies: [
       "React",
@@ -8,7 +21,6 @@ export const SKILLS = [
       "Acternity UI",
       "ShadCN UI",
       "Framer motion",
-      "Tanstack Query",
     ],
   },
   {
@@ -17,35 +29,21 @@ export const SKILLS = [
   },
   {
     category: "Backend",
-    technologies: ["Hono.js", "Express.js", "Flask", "Next.js"],
+    technologies: ["System Design(Data Platform)","Springboot", "Django", "Flask", "Next.js"],
   },
   {
     category: "Mobile",
     technologies: [
-      "React Native",
-      "Expo",
-      "RN MMKV",
-      "RN Reanimated",
-      "RN Gesture Handler",
+      "Flutter",
+      "Dart"
     ],
   },
   {
-    category: "Web3",
-    technologies: [
-      "Solana",
-      "Anchor",
-      "Solana Wallet Provider",
-      "Solana Mobile Wallet Provider",
-      "Ethereum",
-      "Web3.js",
-    ],
-  },
-  {
-    category: "Firmware",
-    technologies: ["C++", "Python", "Micropython"],
+    category: "Programming Language",
+    technologies: ["C++", "Python", "Go","Rust"],
   },
   {
     category: "Hardware",
-    technologies: ["ESP32", "ESP8266"],
+    technologies: ["STEM32"],
   },
 ];
