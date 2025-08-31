@@ -1,4 +1,5 @@
 import { AnimeCards } from "@/components/anime-cards";
+import { BookCards } from "@/components/book-cards";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ResumeCard } from "@/components/resume-card";
@@ -10,6 +11,7 @@ import { WORK } from "@/data/config/work.config";
 import Image from "next/image";
 import React from "react";
 import Markdown from "react-markdown";
+import { WeChatHover } from "@/components/we_chat_hover";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -90,8 +92,7 @@ export default function About() {
           </BlurFade>
         </div>
       </section>
-      {/* todo 这里放一些我看的书 */}
-      {/*  */}
+
       <section id="anime">
         <BlurFade delay={BLUR_FADE_DELAY * 15}>
             <h2 className="text-xl font-bold">Life Movie</h2>
@@ -100,6 +101,16 @@ export default function About() {
           <AnimeCards/>
         </BlurFade>
       </section>
+
+    <section id="book">
+        <BlurFade delay={BLUR_FADE_DELAY * 15}>
+            <h2 className="text-xl font-bold">Reconmend Books</h2>
+        </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 16}>
+          <BookCards/>
+        </BlurFade>
+      </section>
+
       <section id="connect">
         <BlurFade delay={BLUR_FADE_DELAY * 17}>
           <h2 className="text-xl font-bold">Call me</h2>

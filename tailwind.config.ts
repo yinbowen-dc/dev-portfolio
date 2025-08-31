@@ -21,6 +21,12 @@ const config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        'playfair': ['Playfair Display', 'serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'cinzel': ['Cinzel', 'serif'],
+        'cormorant': ['Cormorant Garamond', 'serif'],
+        'tenor': ['Tenor Sans', 'sans-serif'],
+        'quicksand': ['Quicksand', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

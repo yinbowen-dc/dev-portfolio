@@ -27,18 +27,20 @@ export async function POST(request: NextRequest) {
     \`\`\`${message}\`\`\`
     
     `;
-    
-  
+
     const response = await axios.post(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
       chat_id: chatId,
       text: fullMessage,
       parse_mode: "Markdown",
-    });
-  
+    },{
+    timeout: 10000,// 超时时间 为10s
+    family: 4, // 强制使用 IPv4, IPv6 不稳定
+  });
+
     return NextResponse.json({ success: true, status: 200 });
-  
   } catch (error) {
     if (error instanceof Error) {
+      console.log(error);
       console.error("Error in /api/telegram: ", error.message);
       return NextResponse.json({ success: false, error: error.message, status: 500 });
     } else {

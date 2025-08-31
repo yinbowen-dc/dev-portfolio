@@ -160,12 +160,12 @@ export default function Page() {
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-5xl/none"
+                className="text-3xl italic font-medium tracking-tighter sm:text-5xl xl:text-5xl/none"
                 yOffset={8}
                 text={`Hey,Bro, I'm ${DATA.name.split(" ")[0]} `}
               />
               <BlurFadeText
-                className="max-w-[600px] md:text-xl mt-4"
+                className="max-w-[400px] text-sm mt-2 font-bold text-gray-500"
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
@@ -232,11 +232,12 @@ export default function Page() {
                 <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
                   📢 Blog News
                 </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Sharing thoughts on
+               
+                <h2 className="text-left text-3xl font-medium tracking-tighter sm:text-5xl">
+                  Sharing thoughts
                   <br></br>Tech, Life, Wealth, Travel
                 </h2>
-                <p className="text-muted-foreground md:text-lg/relaxed lg:text-lg/relaxed xl:text-lg/relaxed">
+                <p className="italic text-left text-muted-foreground md:text-lg/relaxed lg:text-lg/relaxed xl:text-lg/relaxed">
                   At the current stage of website development, I'm building my own MVP, aiming to create a mobile app 
                   that allows me to record my thoughts anytime, anywhere. 
                   My primary work involves APP traffic analysis and traffic shaping. 
@@ -308,7 +309,7 @@ export default function Page() {
         <div className="flex flex-col items-center">
           <BlurFade delay={BLUR_FADE_DELAY * 10}>
             <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm mb-5">
-              Epic Builds 🈂️
+              🎮 Epic Trick
             </div>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -343,7 +344,7 @@ export default function Page() {
                       </div>
                     </div>
                     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto mt-8">
-                      {PROJECTS.filter((project) => project.featured).map(
+                      {PROJECTS.filter((project) => project.featured && project.project_type === "myworks").map(
                         (project, id) => (
                           <BlurFade
                             key={project.title}
@@ -369,7 +370,56 @@ export default function Page() {
                   </div>
                 </BlurFade>
               </TabsContent>
-              <TabsContent value="clientworks"></TabsContent>
+              <TabsContent value="clientworks">
+                 <BlurFade delay={BLUR_FADE_DELAY}>
+                  <div className="space-y-12 w-full">
+                    <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                      <div className="space-y-2">
+                        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mt-2">
+                          Some of my cool shits
+                        </h2>
+                        <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                          I&apos;ve been buildin' some dope Web3 stuff, from
+                          slick dApps to full-blown solutions. Here’s a taste of
+                          my favs – check out more{" "}
+                          <Link
+                            href="/projects"
+                            className="text-blue-500 hover:underline"
+                          >
+                            projects page
+                          </Link>
+                          .
+                        </p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto mt-8">
+                      {PROJECTS.filter((project) => project.featured && project.project_type === "clientworks").map(
+                        (project, id) => (
+                          <BlurFade
+                            key={project.title}
+                            delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                          >
+                            <ProjectCard
+                              href={project.href}
+                              active={project.active}
+                              archived={project.archived}
+                              key={project.title}
+                              title={project.title}
+                              description={project.description}
+                              dates={project.dates}
+                              tags={project.technologies}
+                              image={project.image}
+                              video={project.video}
+                              links={project.links}
+                            />
+                          </BlurFade>
+                        )
+                      )}
+                    </div>
+                  </div>
+                </BlurFade>
+
+              </TabsContent>
             </Tabs>
           </BlurFade>
         </div>
@@ -380,15 +430,15 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <div className="space-y-3">
               <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                Web3 Messaging Hub 🈯️
+                🍺 Messaging Hub 
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                No Centralized Vibes
+                Hit me up
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Got something to say? Drop your message below, and let’s talk
-                blockchain, crypto, and all things decentralized. No spam, just
-                straight-up web3 vibes.
+                about future data product, or some tech topic like web3, show me up. 
+                No spam, Friends here and friends there.
               </p>
               <div className="pt-10 flex flex-row ">
                 {/* Name Input */}

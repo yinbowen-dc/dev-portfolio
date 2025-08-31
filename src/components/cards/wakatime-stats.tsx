@@ -27,7 +27,7 @@ export const WakatimeStats = () => {
 
   return (
     <a
-      href="https://wakatime.com/@daf7ccde-7d3c-432c-a540-4c99be774860"
+      href="https://wakatime.com/@DC007"
       target="_blank"
       rel="noopener noreferrer"
       className="hover:scale-95 duration-500 transform-gpu"

@@ -46,7 +46,7 @@ export type LanyardResponse = {
 export const dynamic = "force-dynamic";
 
 export const GET = async () => {
-  const ID = '965877275901980682';
+  const ID = '1280193416617267251';
 
   const res = await fetch(
     `https://api.lanyard.rest/v1/users/${ID}`,

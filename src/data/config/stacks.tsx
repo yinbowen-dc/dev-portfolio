@@ -59,19 +59,19 @@ const iconSize = 20;
 export const STACKS: stacksProps = {
   // Languages
   JavaScript: <SiJavascript size={iconSize} color="#F7DF1E" />, // yellow-500
-  TypeScript: <SiTypescript size={iconSize} color="#60A5FA" />, // blue-400
-  Dart: <SiDart size={iconSize} color="#60A5FA" />, // blue-400
-  Go: <SiGo size={iconSize} color="#60A5FA" />, // blue-400
-  Python: <SiPython size={iconSize} color="#60A5FA" />, // blue-400
+  TypeScript: <SiTypescript size={iconSize} color="#4476bf" />, // blue-400
+  Dart: <SiDart size={iconSize} color="#265896" />, // blue-400
+  Go: <SiGo size={iconSize} color="#8fdcf7" />, // blue-400
+  Python: <SiPython size={iconSize} color="#3f6893" />, // blue-400
 
-  Rust: <SiRust size={iconSize} color="#DEA584" />, // rust color
+  Rust: <SiRust size={iconSize} color="#010101" />, // rust color
 
-  // Big Data Technology
-  Spark: <SiApachespark size={iconSize} color="#F7DF1E" />,
-  Flink: <SiApacheflink size={iconSize} color="#F7DF1E" />,
-  Clikhouse: <SiClickhouse size={iconSize} color="#F7DF1E" />,
-  Kafka: <SiApachekafka size={iconSize} color="#F7DF1E" />,
-  Hive: <SiApachehive size={iconSize} color="#F7DF1E" />,
+  // Big Data Technology∂
+  Spark: <SiApachespark size={iconSize} color="#c56b38" />,
+  Flink: <SiApacheflink size={iconSize} color="#d45c71" />,
+  Clikhouse: <SiClickhouse size={iconSize} color="#f9fd80" />,
+  Kafka: <SiApachekafka size={iconSize} color="#fdfdfd" />,
+  Hive: <SiApachehive size={iconSize} color="#f8ec56" />,
 
   // Mobile Frameworks
   Android: <SiAndroid size={iconSize} color="#16A34A" />,
