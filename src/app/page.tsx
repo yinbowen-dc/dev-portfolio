@@ -124,7 +124,7 @@ export default function Page() {
       setIsInputLoading(false);
       console.log("Message successful:", data);
       // Show success toast
-      toast.success(" Tx confirmed! live on-chain to 0xSabdadev!");
+      toast.success(" Tx confirmed! live on-chain to darkchunk!");
       // Update local storage to indicate subscription
       localStorage.setItem("devwtf-nsl", data.id);
       // Update state to reflect subscription
