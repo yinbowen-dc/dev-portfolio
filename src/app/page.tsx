@@ -206,7 +206,7 @@ export default function Page() {
       </section>
       <section id="bio">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold mb-1 md:mb-0">For You Information</h2>
+          <h2 className="text-xl font-bold mb-1 md:mb-0">For Your Information</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
           <Markdown className="prose max-w-full text-pretty font-sans text-[14px] md:text-md text-muted-foreground dark:prose-invert text-justify">
