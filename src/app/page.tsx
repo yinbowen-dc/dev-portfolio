@@ -85,7 +85,7 @@ export default function Page() {
   const [currentTime, setCurrentTime] = useState(new Date());
   // 框词轮播
   const placeholders = [
-    "Send message to 0xSabdadev",
+    "Send message to darkchunk",
     "Connect to the decentralized future",
     "Drop a message, let's build the metaverse",
     "Deploy your ideas, no central authority",
@@ -124,7 +124,7 @@ export default function Page() {
       setIsInputLoading(false);
       console.log("Message successful:", data);
       // Show success toast
-      toast.success(" Tx confirmed! live on-chain to 0xSabdadev!");
+      toast.success(" Tx confirmed! live on-chain to darkchunk!");
       // Update local storage to indicate subscription
       localStorage.setItem("devwtf-nsl", data.id);
       // Update state to reflect subscription
