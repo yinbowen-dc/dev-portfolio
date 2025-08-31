@@ -69,7 +69,7 @@ export const STACKS: stacksProps = {
   // Big Data Technology∂
   Spark: <SiApachespark size={iconSize} color="#c56b38" />,
   Flink: <SiApacheflink size={iconSize} color="#d45c71" />,
-  Clikhouse: <SiClickhouse size={iconSize} color="#f9fd80" />,
+  Clickhouse: <SiClickhouse size={iconSize} color="#f9fd80" />,
   Kafka: <SiApachekafka size={iconSize} color="#fdfdfd" />,
   Hive: <SiApachehive size={iconSize} color="#f8ec56" />,
 
