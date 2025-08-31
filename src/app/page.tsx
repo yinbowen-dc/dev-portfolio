@@ -85,7 +85,7 @@ export default function Page() {
   const [currentTime, setCurrentTime] = useState(new Date());
   // 框词轮播
   const placeholders = [
-    "Send message to 0xSabdadev",
+    "Send message to darkchunk",
     "Connect to the decentralized future",
     "Drop a message, let's build the metaverse",
     "Deploy your ideas, no central authority",
