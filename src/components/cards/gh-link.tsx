@@ -31,8 +31,8 @@ export const GHLink = () => {
         </span>
       </span>
       <span className="space-y-0.5 px-6 pb-6">
-        <span className="block font-semibold">GitHub 実</span>
-        <span className="block text-sm">Ma onchain playground 🔮</span>
+        <span className="block font-semibold">GitHub</span>
+        <span className="block text-sm">get some fun here</span>
       </span>
     </a>
   );

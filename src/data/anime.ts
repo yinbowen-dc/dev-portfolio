@@ -8,78 +8,62 @@ export interface Anime {
 
 export const AnimeData: Anime[] = [
   // 这里改成电影
+  // 瑞克和莫蒂
   {
     title: "Rick and Morty",
+    altTitle: "Break free from mental shackles; if it's theoretically feasible, it can be achieved. No values, no emotions, only strict premises and deductions",
     href: "https://en.wikipedia.org/wiki/Rick_and_Morty",
-    imgName: "R&M",
+    imgName: "RickAndMorty",
     starred: true,
   },
   // 搏击俱乐部
-  // 辛普森一家
-  // 社交网络
-  // 硅谷
+  {
+    title: "Fight Club",
+    altTitle: "You are not your job. You're not how much money you have in the bank. You're not the car you drive. You're not the contents of your wallet. You're not your fucking khakis. You're the all-singing, all-dancing crap of the world.",
+    href: "https://en.wikipedia.org/wiki/Fight_Club",
+    imgName: "FightClub",
+    starred: true,
+  },
+ // 社交网络
+    {
+    title: "The Social Network",
+    href: "https://en.wikipedia.org/wiki/The_Social_Network",
+    imgName: "TheSocialNetwork",
+    starred: true,
+  },
+   // 硅谷
+  {
+    title: "Silicon Valley",
+    href: "https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)",
+    imgName: "SiliconValley",
+    starred: true,
+  },
   // 百万富豪翻身记 
+   {
+    title: "Undercover Billionaire",
+    href: "https://en.wikipedia.org/wiki/Undercover_Billionaire",
+    imgName: "UndercoverBillionaire",
+    starred: true,
+  },
+  // 辛普森一家
+  {
+    title: "The Simpsons",
+    href: "https://en.wikipedia.org/wiki/The_Simpsons",
+    imgName: "TheSimpsons",
+    starred: true,
+  },
   // 排球少年
+    {
+    title: "Haikyu!!",
+    href: "https://en.wikipedia.org/wiki/Haikyu!!",
+    imgName: "Haikyu",
+    starred: true,
+  },
   // 进击的巨人
-
-  // {
-  //   title: "Shingeki no Kyojin",
-  //   altTitle: "Attack on Titan",
-  //   href: "https://myanimelist.net/anime/16498/Shingeki_no_Kyojin",
-  //   imgName: "aot",
-  // },
-  // {
-  //   title: "Boku no Hero Academia",
-  //   href: "https://myanimelist.net/anime/31964/Boku_no_Hero_Academia",
-  //   imgName: "bokhero",
-  // },
-  // {
-  //   title: "Darling in the FranXX",
-  //   href: "https://myanimelist.net/anime/35849/Darling_in_the_FranXX",
-  //   imgName: "darling",
-  //   starred: true,
-  // },
-  // {
-  //   title: "Assassination Classroom",
-  //   href: "https://myanimelist.net/anime/24833/Ansatsu_Kyoushitsu",
-  //   imgName: "korosensei",
-  //   starred: true,
-  // },
-  
-  // {
-  //   title: "Classroom of the Elite",
-  //   href: "https://myanimelist.net/anime/35507/Youkoso_Jitsuryoku_Shijou_Shugi_no_Kyoushitsu_e",
-  //   imgName: "coe",
-  //   starred: true,
-  // },
-  // {
-  //   title: "No Game No Life",
-  //   href: "https://myanimelist.net/anime/19815/No_Game_No_Life",
-  //   imgName: "game",
-  // },
-  // {
-  //   title: "Re:Zero kara Hajimeru Isekai Seikatsu",
-  //   altTitle: "Re:Zero − Starting Life in Another World",
-  //   href: "https://myanimelist.net/anime/31240/Re_Zero_kara_Hajimeru_Isekai_Seikatsu",
-  //   imgName: "rezero",
-  //   starred: true,
-  // },
-  // {
-  //   title: "Sword Art Online",
-  //   href: "https://myanimelist.net/anime/11757/Sword_Art_Online",
-  //   imgName: "sao",
-  // },
-  // {
-  //   title: "Yakusoku no Neverland",
-  //   altTitle: "The Promised Neverland",
-  //   href: "https://myanimelist.net/anime/37779/Yakusoku_no_Neverland",
-  //   imgName: "promised",
-  //   starred: true,
-  // },
+  {
+    title: "Attack on Titan",
+    href: "https://en.wikipedia.org/wiki/Attack_on_Titan",
+    imgName: "AttackonTitan",
+    starred: true,
+  },
 ];
-
-// 这里有一些我推荐的书籍
-// 方法论类的 
-// 代码之外
-// 黑客与画家
-// 马斯克传

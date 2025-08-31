@@ -32,9 +32,9 @@ export const DCStatus = () => {
     if (!status) return "Unknown Status";
     switch (status) {
       case "online":
-        return "onchain 在";
+        return "onchain";
       case "offline":
-        return "offchain 離";
+        return "offchain";
       case "idle":
         return "taking a nap";
       case "dnd":

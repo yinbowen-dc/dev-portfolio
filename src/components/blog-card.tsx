@@ -28,7 +28,7 @@ export const BlogCard = ({
   publishedAt,
 }: BlogCardProps) => {
   return (
-    <Link href={href || "#"} className="block cursor-pointer">
+    <Link href={href || "https://www.linkedin.com/in/bowen-yin-317723271/"} className="block cursor-pointer">
       <Card className="flex bg-background py-4">
         <div className="flex-none">
           <Avatar className="size-12 m-auto rounded-lg bg-muted-foreground border-2">

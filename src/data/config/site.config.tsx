@@ -3,9 +3,9 @@ import { Icons } from "@/components/icons";
 export const DATA = {
   name: "DarkChunk",
   initials: "yinbowen-dc",
-  url: "https://oxsabdadev.vercel.app",
+  url: "https://darkchunk.top",
   // todo: 简历
-  resume: "https://drive.google.com/file/d/1XobsqXBKZi8xdjZLbAgeaEDRGIYO3p3x/view?usp=sharing",
+  resume: "https://docs.google.com/document/d/1oqdkyvyhUWxy8UEd2Ic-cLm5SLlTVuoLSSnI26-0jsM/edit?tab=t.0",
   prevImage: "/prev.png",
   myImage: "/buildspace.jpg",
   location: "Beijing, China",
@@ -23,7 +23,7 @@ export const DATA = {
     "I started programming at 18 when I entered the Data Science and Big Data Technology program at [Chongqing University of Technology](https://www.cqut.edu.cn/) (due to China's education system and the limitations of being a small-town academic student, I didn't have access to quality resources earlier). After two years of intensive professional courses and self-study, I successfully won second place in [Alibaba Tianchi Challenge](https://tianchi.aliyun.com/competition/entrance/531912/score) and other competitions, marking some notable achievements in the Big Data field (though looking at it now, Big Data seems to be declining). On the internet, I go by the name [Darkchunk](https://account.bilibili.com/account/home?spm_id_from=333.1007.0.0). Won't you ask me what this name means? [Click here to know more](/about).Back in 2019, as a freshman in college, my understanding of the internet was limited to apps and websites. Like most students, I chose computer science simply for its high salary potential. I was majoring in Data Science and Big Data Technology, but unfortunately, our department's professors were all transferred from the Mathematics Department. They actually had no clue about new technologies like Spark, Kafka, Flink, and other big data technologies and their implementations.They always tried to force students to learn useless stuff using the illogical excuse of <building fundamentals>. Fortunately, I wasn't the type of student who would blindly follow instructions while plugging my ears. So, I started frequently skipping classes and began seeking opportunities to participate in projects by approaching professors in the laboratory.Luckily, I got the chance to be mentored by my professor, allowing me to participate in research work as an undergraduate student. At that time, we were helping Huawei make their compression algorithms compatible with Spark by modifying the source code.This should be considered the official start of my professional career.",
   avatarUrl: "/me.jpg",
   connect:
-    "Let's take on challenging endeavors and create new value for the world alongside exceptional individuals. If you're interested in collaboration or information exchange, feel free to reach out through [X/Twitter](https://x.com/GaiyuLuo47060), [Instagram](https://www.instagram.com/luogaiyu3/?igsh=MTJyZmloazkyODZtcA%3D%3D#), WeChat:(a1449528975), or send me an **email: (self_effacing@163.com)**. When I'm gone, I hope that beyond my tombstone, my products will stand as testament to the fact that I once soared.",
+    "Let's take on challenging endeavors and create new value for the world alongside exceptional individuals. If you're interested in collaboration or information exchange, feel free to reach out through [X/Twitter](https://x.com/GaiyuLuo47060), [Instagram](https://www.instagram.com/luogaiyu3/?igsh=MTJyZmloazkyODZtcA%3D%3D#), [WeChat](/vx.png), or send me an **email: (self_effacing@163.com)**. When I'm gone, I hope that beyond my tombstone, my products will stand as testament to the fact that I once soared.",
   // todo
   skills: [
     "Spark",
@@ -52,7 +52,7 @@ export const DATA = {
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "#",
+        url: "https://www.linkedin.com/in/bowen-yin-317723271/",
         icon: Icons.linkedin,
 
         navbar: true,
@@ -79,7 +79,7 @@ export const DATA = {
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "self_effacing@163.com",
         icon: Icons.email,
 
         navbar: false,
