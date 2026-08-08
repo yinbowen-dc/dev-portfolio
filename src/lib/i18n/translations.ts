@@ -71,7 +71,7 @@ export const translations: Record<Language, Translations> = {
     data: {
       description:
         "Data Engineer| Full Stack Developer | Quant Trader| Technology Geeker",
-      bio: "Hey, I'm a Data Engineer based in [Beijing](https://maps.app.goo.gl/UujHe5K394Fvpv3M7), currently providing e-commerce data services at Tencent and exploring Agent-related product opportunities. Keeping up with AI & Web3 tech, always staying in sync with the latest innovations. I'm also a quant trader (though I'm still in the red, but profitability is just around the corner!). When I'm not deep in code, you'll find me buried in books, cruising on my motorcycle, or skateboarding (don't ask me how I have so much time - the perks of staying off TikTok 😎). My idol is Elon Musk - despite his controversial political moves, I really admire his spirit. I'm aspiring to become a tech geek who creates world-changing products (maybe hardware-software services - still exploring, keeping an open mind, and believing in possibilities).",
+      bio: "Hey, I'm a Data Engineer based in [Beijing](https://maps.app.goo.gl/UujHe5K394Fvpv3M7), currently providing e-commerce data services at Tencent and exploring Agent-related product opportunities. Keeping up with AI & Web3 tech, always staying in sync with the latest innovations. I'm also a quant trader (though I'm still in the red, but profitability is just around the corner!). Beyond my day job, I'm actively exploring a second growth curve — working towards building a complete business loop around hardware-software tech products. When I'm not deep in code, I've recently gotten hooked on tennis 🎾, and you'll still find me buried in books or cruising on my motorcycle. My idol is Elon Musk - despite his controversial political moves, I really admire his spirit. Aspiring to become a tech geek who creates world-changing products.",
       connect:
         "Let's take on challenging endeavors and create new value for the world alongside exceptional individuals. If you're interested in collaboration or information exchange, feel free to reach out through [X/Twitter](https://x.com/GaiyuLuo47060), [Instagram](https://www.instagram.com/luogaiyu3/?igsh=MTJyZmloazkyODZtcA%3D%3D#), [WeChat](/vx.png), or send me an **email: (self_effacing@163.com)**. When I'm gone, I hope that beyond my tombstone, my products will stand as testament to the fact that I once soared.",
       career:
@@ -186,7 +186,7 @@ export const translations: Record<Language, Translations> = {
   zh: {
     data: {
       description: "数据工程师 | 全栈开发者 | 量化交易 | 技术极客",
-      bio: "嘿，我是一名数据工程师，现居北京，目前在腾讯提供电商数据服务，同时探索 Agent 相关产品方向。持续关注 AI 与 Web3 技术，始终与最新创新保持同步。我还是一名量化交易者（虽然目前还在亏损，但盈利就在眼前！）。不码代码的时候，你可以看到我捧着书、骑着摩托或者玩滑板（别问我哪来那么多时间——不刷抖音的特权 😎）。我的偶像是埃隆·马斯克——尽管他的一些政治举动颇具争议，但我由衷钦佩他的精神。我立志成为一名能创造改变世界产品的技术极客（可能是软硬件结合——还在探索中，保持开放，相信可能性）。",
+      bio: "嘿，我是一名数据工程师，现居北京，目前在腾讯提供电商数据服务，同时探索 Agent 相关产品方向。持续关注 AI 与 Web3 技术，始终与最新创新保持同步。我还是一名量化交易者（虽然目前还在亏损，但盈利就在眼前！）。工作之外，我正在积极探索第二曲线——希望围绕软硬件结合的科技产品完成商业闭环。最近迷上了网球 🎾，不打球的时候就捧着书或者骑摩托。我的偶像是埃隆·马斯克——由衷钦佩他的精神。立志成为一名能创造改变世界产品的技术极客。",
       connect:
         "让我们携手并肩、迎接挑战，与优秀的人一起为世界创造新价值。如果有意合作或交流，欢迎通过 [X/Twitter](https://x.com/GaiyuLuo47060)、[Instagram](https://www.instagram.com/luogaiyu3/?igsh=MTJyZmloazkyODZtcA%3D%3D#)、[微信](/vx.png) 联系我，或发送**邮件：(self_effacing@163.com)**。愿在我离开之后，墓碑之外，我的产品能成为印记——证明我曾经翱翔于世。",
       career:
