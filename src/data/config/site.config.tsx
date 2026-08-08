@@ -8,7 +8,7 @@ export const DATA = {
   resume: "https://docs.google.com/document/d/1oqdkyvyhUWxy8UEd2Ic-cLm5SLlTVuoLSSnI26-0jsM/edit?tab=t.0",
   prevImage: "/prev.png",
   myImage: "/buildspace.jpg",
-  location: "Beijing, China",
+  location: "Guangzhou, China",
   locationLink: "https://maps.app.goo.gl/DPRcouZjgvTDHxb49",
   timeZone: "Asia/Shanghai",
   localCode: "en-IN",
