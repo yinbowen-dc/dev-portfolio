@@ -3,7 +3,7 @@ import { FaJava } from "react-icons/fa";
 import {
   SiAndroid,
   SiCircle,
-  SiCss,
+  SiCss3,
   SiDart,
   SiDocker,
   SiExpress,
@@ -87,7 +87,7 @@ export const STACKS: stacksProps = {
   "Material UI": <SiMui size={iconSize} color="#38BDF8" />, // sky-400
   TailwindCSS: <SiTailwindcss size={iconSize} color="#67E8F9" />, // cyan-300
   Redux: <SiRedux size={iconSize} color="#A855F7" />, // purple-500
-  CSS: <SiCss size={iconSize} color="#93C5FD" />, // blue-300
+  CSS: <SiCss3 size={iconSize} color="#93C5FD" />, // blue-300
   Flowbite: <Flowbite iconSize={iconSize} />,
 
   // Backend

@@ -1,4 +1,5 @@
 // src/app/api/gh-stats/route.ts
+export const dynamic = 'force-dynamic';
 import { NextResponse } from 'next/server';
 import { getGHStats } from '@/lib/get-gh-stats';
 
