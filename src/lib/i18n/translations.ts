@@ -71,7 +71,7 @@ export const translations: Record<Language, Translations> = {
     data: {
       description:
         "Data Engineer | Game Dev | AI Product Builder | Quant Trader",
-      bio: "Hey, I'm a Data Engineer based in [Guangzhou](https://maps.app.goo.gl/DPRcouZjgvTDHxb49), currently providing e-commerce data services at Tencent and exploring Agent-related product opportunities. I'm also running an A-share quantitative trading platform — currently in the backtesting phase, validating ideas one by one. Beyond my day job, I'm obsessed with game development, building new products with AI, and growing overseas social media. I'm actively exploring a second growth curve — working towards a complete business loop around hardware-software tech products. When I'm not coding, you'll find me on the tennis court 🎾 or buried in a book. My idol is Elon Musk. I believe projects matter more than job titles — keep evolving, stay humble, and there's always something to learn from everyone you meet. Nice to meet you 🤝",
+      bio: "Hey, I'm a Data Engineer based in [Guangzhou](https://maps.app.goo.gl/DPRcouZjgvTDHxb49), currently providing e-commerce data services at Tencent and exploring Agent-related products. Beyond my day job, I'm obsessed with building a second growth curve — creating games, building AI-powered products, and growing overseas social media, all working toward a complete business loop around hardware-software tech. I'm also running an A-share quantitative trading platform, currently in the backtesting phase validating ideas. When I'm not coding, you'll find me on the tennis court 🎾 or buried in a book. I believe projects matter more than job titles. Keep evolving, stay humble — there's always something to learn from everyone. The only things that never blur are physics and mathematics. Nice to meet you 🤝",
       connect:
         "Let's take on challenging endeavors and create new value for the world alongside exceptional individuals. If you're interested in collaboration or information exchange, feel free to reach out through [X/Twitter](https://x.com/GaiyuLuo47060), [Instagram](https://www.instagram.com/luogaiyu3/?igsh=MTJyZmloazkyODZtcA%3D%3D#), [WeChat](/vx.png), or send me an **email: (self_effacing@163.com)**. When I'm gone, I hope that beyond my tombstone, my products will stand as testament to the fact that I once soared.",
       career:
@@ -186,7 +186,7 @@ export const translations: Record<Language, Translations> = {
   zh: {
     data: {
       description: "数据工程师 | 游戏开发 | AI 产品 | 量化交易",
-      bio: "嘿，我是一名数据工程师，现居广州，目前在腾讯提供电商数据服务，同时探索 Agent 相关产品方向。另外在搭建一个 A 股量化交易平台，目前在回测阶段，逐步验证想法。工作之外，最近沉迷于做游戏、用 AI 创造新产品，以及运营海外社媒。我正积极探索第二曲线——希望围绕软硬件结合的科技产品完成商业闭环。不敲代码的时候就去打网球 🎾 或者看书。偶像是马斯克。我相信项目比职位重要——持续进化，温和做人，三人行必有我师。幸会 🤝",
+      bio: "嘿，我是一名数据工程师，现居广州，目前在腾讯提供电商数据服务，同时探索 Agent 相关产品方向。工作之外，我正在积极探索第二曲线——沉迷于做游戏、用 AI 创造新产品、运营海外社媒，希望围绕软硬件结合的科技产品完成商业闭环。另外在搭建 A 股量化交易平台，目前在回测阶段逐步验证想法。不敲代码的时候就去打网球 🎾 或者看书。我相信项目比职位重要——持续进化，温和做人，三人行必有我师。不会模糊的只有物理和数学。幸会 🤝",
       connect:
         "让我们携手并肩、迎接挑战，与优秀的人一起为世界创造新价值。如果有意合作或交流，欢迎通过 [X/Twitter](https://x.com/GaiyuLuo47060)、[Instagram](https://www.instagram.com/luogaiyu3/?igsh=MTJyZmloazkyODZtcA%3D%3D#)、[微信](/vx.png) 联系我，或发送**邮件：(self_effacing@163.com)**。愿在我离开之后，墓碑之外，我的产品能成为印记——证明我曾经翱翔于世。",
       career:
