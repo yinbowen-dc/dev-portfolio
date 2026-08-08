@@ -8,7 +8,9 @@ export const AnimeCards = () => {
           <AnimeCard
             key={anime.href}
             title={anime.title}
+            titleZh={anime.titleZh}
             altTitle={anime.altTitle}
+            altTitleZh={anime.altTitleZh}
             href={anime.href}
             imgName={anime.imgName}
             starred={anime.starred}

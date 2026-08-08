@@ -1,5 +1,7 @@
+"use client";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "@/components/mode-toggle";
+import { LanguageToggle } from "@/components/language-toggle";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -12,8 +14,18 @@ import { DATA } from "@/data/config/site.config";
 import { cn } from "@/lib/utils";
 import { Paperclip } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/components/providers";
 
 export default function BottomNavbar() {
+  const { t } = useLanguage();
+
+  const navNames: Record<string, string> = {
+    "/about": t.nav.about,
+    "/projects": t.nav.projects,
+    "/blog": t.nav.blog,
+    "/#newsletter": t.nav.reach,
+  };
+
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14">
       <div className="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>
@@ -33,7 +45,7 @@ export default function BottomNavbar() {
                 </Link>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{item.name}</p>
+                <p>{navNames[item.link] ?? item.name}</p>
               </TooltipContent>
             </Tooltip>
           </DockIcon>
@@ -54,7 +66,18 @@ export default function BottomNavbar() {
               </Link>
             </TooltipTrigger>
             <TooltipContent>
-              <p>Resume</p>
+              <p>{t.hero.resume}</p>
+            </TooltipContent>
+          </Tooltip>
+        </DockIcon>
+
+        <DockIcon>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <LanguageToggle />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{t.nav.language}</p>
             </TooltipContent>
           </Tooltip>
         </DockIcon>
@@ -63,7 +86,7 @@ export default function BottomNavbar() {
           <Tooltip>
             <ModeToggle />
             <TooltipContent>
-              <p>Theme</p>
+              <p>{t.nav.theme}</p>
             </TooltipContent>
           </Tooltip>
         </DockIcon>

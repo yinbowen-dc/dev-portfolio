@@ -1,15 +1,23 @@
+"use client";
 import { Book } from "@/data/book";
+import { useLanguage } from "@/components/providers";
 
 export const BookCard = ({
   title,
+  titleZh,
   href,
   altTitle,
+  altTitleZh,
   imgName,
   starred,
 }: Book) => {
-  const altTitleElement = altTitle ? (
+  const { lang } = useLanguage();
+  const displayTitle = lang === "zh" && titleZh ? titleZh : title;
+  const displayAltTitle = lang === "zh" && altTitleZh ? altTitleZh : altTitle;
+
+  const altTitleElement = displayAltTitle ? (
     <div className="text-xs text-gray-900 dark:text-gray-200 italic font-semibold opacity-75">
-      ({altTitle})
+      ({displayAltTitle})
     </div>
   ) : null;
 
@@ -25,7 +33,7 @@ export const BookCard = ({
         style={{ backgroundImage: `url('/assets/books/${imgName}.webp')` }}
       ></div>
       <div className="transition duration-300 ease-in-out opacity-0 group-hover:opacity-100 ml-0 sm:ml-4 z-40 text-2xl my-auto font-bold">
-        <div>{title}</div> {altTitleElement}
+        <div>{displayTitle}</div> {altTitleElement}
       </div>
     </a>
   );

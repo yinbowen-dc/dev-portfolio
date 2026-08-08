@@ -4,6 +4,7 @@ import { formatDate } from "@/lib/utils";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import { cookies } from "next/headers";
 
 export async function generateMetadata({
   params,
@@ -68,11 +69,11 @@ export async function generateMetadata({
 export default async function Blog({
   params,
 }: {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
 }) {
-  const post = await getPost(params.slug);
+  const cookieStore = cookies();
+  const lang = cookieStore.get("portfolio-lang")?.value ?? "en";
+  const post = await getPost(params.slug, lang);
 
   if (!post) {
     notFound(); // Trigger 404 page
@@ -115,7 +116,9 @@ export default async function Blog({
         </h1>
         <div className="flex justify-start items-center mt-2 mb-8 text-sm max-w-[650px]">
           <p className="text-sm text-neutral-600 dark:text-neutral-400 ml-1">
-            - it&apos;s a &quot;{post.metadata.readTime} read&quot; blog.
+            {lang === "zh"
+              ? `- 阅读时长约 ${post.metadata.readTime}`
+              : `- it's a "${post.metadata.readTime} read" blog.`}
           </p>
         </div>
         <article

@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { ModeToggle } from "../mode-toggle";
 import { Separator } from "../ui/separator";
+import { LanguageToggle } from "../language-toggle";
 
 export const FloatingNav = ({
   navItems,
@@ -78,6 +79,7 @@ export const FloatingNav = ({
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
         </button> */}
         <Separator orientation="vertical" className="h-full py-2" />
+        <LanguageToggle />
         <ModeToggle />
       </motion.div>
     </AnimatePresence>

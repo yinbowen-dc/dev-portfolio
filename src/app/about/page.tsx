@@ -1,3 +1,4 @@
+"use client";
 import { AnimeCards } from "@/components/anime-cards";
 import { BookCards } from "@/components/book-cards";
 import BlurFade from "@/components/magicui/blur-fade";
@@ -12,10 +13,12 @@ import Image from "next/image";
 import React from "react";
 import Markdown from "react-markdown";
 import { WeChatHover } from "@/components/we_chat_hover";
+import { useLanguage } from "@/components/providers";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function About() {
+  const { t } = useLanguage();
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10 pt-0 md:pt-10 pb-10 md:pb-0">
       <section id="quote">
@@ -27,7 +30,7 @@ export default function About() {
         />
         <BlurFade delay={BLUR_FADE_DELAY * 2}>
           <p className="text-lg text-muted-foreground mb-6">
-            In this Web2 domain, I will demonstrate my path of development.
+            {t.about.subtitle}
           </p>
         </BlurFade>
 
@@ -44,7 +47,7 @@ export default function About() {
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <h2 className="text-xl font-bold">Educational Background</h2>
+            <h2 className="text-xl font-bold">{t.about.education}</h2>
           </BlurFade>
           {DATA.education.map((education, id) => (
             <BlurFade
@@ -56,9 +59,9 @@ export default function About() {
                 href={education.href}
                 logoUrl={education.logoUrl}
                 altText={education.school}
-                title={education.school}
-                location={education.location}
-                subtitle={education.degree}
+                title={t.educationItems[id]?.school ?? education.school}
+                location={t.educationItems[id]?.location ?? education.location}
+                subtitle={t.educationItems[id]?.degree ?? education.degree}
                 period={`${education.start} - ${education.end}`}
               />
             </BlurFade>
@@ -68,7 +71,7 @@ export default function About() {
       <section id="">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-xl font-bold">Work Expierence</h2>
+            <h2 className="text-xl font-bold">{t.about.work}</h2>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 14}>
             <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
@@ -78,10 +81,15 @@ export default function About() {
                   delay={BLUR_FADE_DELAY * 6 + id * 0.05}
                 >
                   <TimeLineCard
-                    title={work.title}
-                    role={work.role}
-                    description={work.description}
-                    location={work.location}
+                    title={t.workItems[id]?.title ?? work.title}
+                    role={t.workItems[id]?.role ?? work.role}
+                    description={
+                      t.workItems[id]?.description.map((d, i) => ({
+                        text: d.text,
+                        technologies: work.description[i]?.technologies,
+                      })) ?? work.description
+                    }
+                    location={t.workItems[id]?.location ?? work.location}
                     dates={work.dates}
                     image={work.image}
                     links={work.links}
@@ -95,7 +103,7 @@ export default function About() {
 
       <section id="anime">
         <BlurFade delay={BLUR_FADE_DELAY * 15}>
-            <h2 className="text-xl font-bold">Life Movie</h2>
+            <h2 className="text-xl font-bold">{t.about.anime}</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 16}>
           <AnimeCards/>
@@ -104,7 +112,7 @@ export default function About() {
 
     <section id="book">
         <BlurFade delay={BLUR_FADE_DELAY * 15}>
-            <h2 className="text-xl font-bold">Reconmend Books</h2>
+            <h2 className="text-xl font-bold">{t.about.books}</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 16}>
           <BookCards/>
@@ -113,11 +121,11 @@ export default function About() {
 
       <section id="connect">
         <BlurFade delay={BLUR_FADE_DELAY * 17}>
-          <h2 className="text-xl font-bold">Call me</h2>
+          <h2 className="text-xl font-bold">{t.about.connect}</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 18}>
           <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert text-justify">
-            {DATA.connect}
+            {t.data.connect}
           </Markdown>
         </BlurFade>
       </section>

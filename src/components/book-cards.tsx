@@ -8,7 +8,9 @@ export const BookCards = () => {
           <BookCard
             key={book.href}
             title={book.title}
+            titleZh={book.titleZh}
             altTitle={book.altTitle}
+            altTitleZh={book.altTitleZh}
             href={book.href}
             imgName={book.imgName}
             starred={book.starred}

@@ -1,5 +1,3 @@
-import { ThemeProvider } from "@/components/theme-provider";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/config/site.config";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -11,6 +9,7 @@ import { ScheduleCallFloat } from "@/components/cal";
 import { Analytics } from "@vercel/analytics/react"
 import { Toaster } from "@/components/ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Providers } from "@/components/providers";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -102,8 +101,7 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <TooltipProvider delayDuration={0}>
+        <Providers>
             <div className="hidden md:block">
               <TopNavbar />
             </div>
@@ -115,8 +113,7 @@ export default function RootLayout({
             <ScheduleCallFloat />
             <Analytics/>
             <Toaster />
-          </TooltipProvider>
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

@@ -8,7 +8,12 @@ import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 
 function getMDXFiles(dir: string) {
-  return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
+  return fs.readdirSync(dir).filter((file) => {
+    const ext = path.extname(file);
+    const name = path.basename(file, ext);
+    // exclude .zh.mdx files from the main listing
+    return ext === ".mdx" && !name.endsWith(".zh");
+  });
 }
 
 export async function markdownToHTML(markdown: string) {
@@ -29,8 +34,12 @@ export async function markdownToHTML(markdown: string) {
   return p.toString();
 }
 
-export async function getPost(slug: string) {
-  const filePath = path.join("content", `${slug}.mdx`);
+export async function getPost(slug: string, lang?: string) {
+  // Try language-specific file first (e.g. life_books.zh.mdx)
+  const filePath = lang && lang !== "en"
+    ? path.join("content", `${slug}.${lang}.mdx`)
+    : path.join("content", `${slug}.mdx`);
+  const fallbackPath = path.join("content", `${slug}.mdx`);
 
   try {
     // Attempt to read the file
@@ -44,6 +53,17 @@ export async function getPost(slug: string) {
       slug,
     };
   } catch (error: any) {
+    // If zh file not found, fall back to English
+    if (error.code === "ENOENT" && filePath !== fallbackPath) {
+      try {
+        const source = fs.readFileSync(fallbackPath, "utf-8");
+        const { content: rawContent, data: metadata } = matter(source);
+        const content = await markdownToHTML(rawContent);
+        return { source: content, metadata, slug };
+      } catch {
+        return false;
+      }
+    }
     if (error.code === "ENOENT") {
       return false;
     } else {

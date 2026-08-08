@@ -25,13 +25,17 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { toast } from "sonner";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { GridCards } from "@/components/grid-cards";
+import { ContentPlatforms } from "@/components/content-platforms";
+import { useLanguage } from "@/components/providers";
 const BLUR_FADE_DELAY = 0.04;
 
 interface BlogsI {
   slug: string;
   metadata: {
     title: string;
+    titleZh?: string;
     summary: string;
+    summaryZh?: string;
     publishedAt: string;
     icon: string;
     featured: boolean;
@@ -39,6 +43,7 @@ interface BlogsI {
   };
 }
 export default function Page() {
+  const { t } = useLanguage();
   const [blogPosts, setBlogPosts] = useState<BlogsI[]>([]);
   const [isNsl, setIsNsl] = useState(false);
   const [isInputLoading, setIsInputLoading] = useState(false);
@@ -84,13 +89,7 @@ export default function Page() {
   const [hovering, setHovering] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
   // 框词轮播
-  const placeholders = [
-    "Send message to darkchunk",
-    "Connect to the decentralized future",
-    "Drop a message, let's build the metaverse",
-    "Deploy your ideas, no central authority",
-    "The chain awaits your next big move",
-  ];
+  const placeholders = t.contact.placeholders as readonly string[];
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -101,12 +100,12 @@ export default function Page() {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!name.trim() || !mail.trim()) {
-      toast.error("Both name and message are required!");
+      toast.error(t.toast.required);
       return;
     }
     setTriggerDisappear(true);
     setIsInputLoading(true);
-    toast.info("Ur message is being mined...");
+    toast.info(t.toast.sending);
     try {
       const response = await fetch("/api/telegram", {
         method: "POST",
@@ -123,18 +122,14 @@ export default function Page() {
       const data = await response.json();
       setIsInputLoading(false);
       console.log("Message successful:", data);
-      // Show success toast
-      toast.success(" Tx confirmed! live on-chain to darkchunk!");
-      // Update local storage to indicate subscription
+      toast.success(t.toast.success);
       localStorage.setItem("devwtf-nsl", data.id);
-      // Update state to reflect subscription
       setIsNsl(false);
       setTriggerDisappear(false);
     } catch (error) {
       setIsInputLoading(false);
       console.error("Error messaging:", error);
-      // Show error toast
-      toast.error("Message failed. Please try again.");
+      toast.error(t.toast.error);
     }
   };
 
@@ -162,12 +157,12 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl italic font-medium tracking-tighter sm:text-5xl xl:text-5xl/none"
                 yOffset={8}
-                text={`Hey,Bro, I'm ${DATA.name.split(" ")[0]} `}
+                text={`${t.hero.greeting} ${DATA.name.split(" ")[0]} `}
               />
               <BlurFadeText
                 className="max-w-[400px] text-sm mt-2 font-bold text-gray-500"
                 delay={BLUR_FADE_DELAY}
-                text={DATA.description}
+                text={t.data.description}
               />
               <BlurFade delay={BLUR_FADE_DELAY}>
                 <div className="flex flex-wrap gap-1 h-full w-full">
@@ -187,7 +182,7 @@ export default function Page() {
                   <Link href={DATA.resume} target="_blank">
                     <Badge variant="secondary" className="flex cursor-pointer">
                       <span className="size-4 mr-1">✨</span>
-                      Resume
+                      {t.hero.resume}
                     </Badge>
                   </Link>
                 </div>
@@ -206,11 +201,11 @@ export default function Page() {
       </section>
       <section id="bio">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold mb-1 md:mb-0">For Your Information</h2>
+          <h2 className="text-xl font-bold mb-1 md:mb-0">{t.bio.heading}</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
           <Markdown className="prose max-w-full text-pretty font-sans text-[14px] md:text-md text-muted-foreground dark:prose-invert text-justify">
-            {DATA.bio}
+            {t.data.bio}
           </Markdown>
         </BlurFade>
       </section>
@@ -230,27 +225,18 @@ export default function Page() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  📢 Blog News
+                  {t.blog.badge}
                 </div>
-               
+
                 <h2 className="text-left text-3xl font-medium tracking-tighter sm:text-5xl">
-                  Sharing thoughts
-                  <br></br>Tech, Life, Wealth, Travel
+                  {t.blog.heading}
+                  <br></br>{t.blog.subheading}
                 </h2>
                 <p className="italic text-left text-muted-foreground md:text-lg/relaxed lg:text-lg/relaxed xl:text-lg/relaxed">
-                  At the current stage of website development, I'm building my own MVP, aiming to create a mobile app 
-                  that allows me to record my thoughts anytime, anywhere. 
-                  My primary work involves APP traffic analysis and traffic shaping. 
-                  Specifically, I use big data technologies (such as Spark, Flink, and Kafka) 
-                  to process TB and PB-level data for real-time signal analysis, helping algorithms better 
-                  understand user intent. Additionally, through offline analysis, I assist businesses in 
-                  understanding their functional data status more clearly. This includes tasks such as building
-                  user profiles for personalized recommendation systems tailored to individual users.
-                  If you're interested in my work, you can follow my updates on Medium & Juejin (Chinese tech community platform).
-                  However, please note that as of August 25, 2025, my Medium page remains empty.
+                  {t.blog.description}
                   {" "}
                   <Link href="/blog" className="text-blue-500 hover:underline">
-                    blog page{" "}
+                    {t.blog.linkText}{" "}
                   </Link>
                   or{" "}
                   <Link
@@ -260,7 +246,7 @@ export default function Page() {
                   >
                     Medium
                   </Link>
-                  or 
+                  or
                   <Link
                     href="https://juejin.cn/user/3892711776064952"
                     target="_blank"
@@ -271,6 +257,7 @@ export default function Page() {
                   .
                 </p>
               </div>
+              <ContentPlatforms />
             </div>
           </BlurFade>
           <div className="flex flex-col gap-3 w-full">
@@ -292,7 +279,9 @@ export default function Page() {
                       <BlogCard
                         href={`/blog/${post.slug}`}
                         title={post.metadata.title}
+                        titleZh={post.metadata.titleZh}
                         description={post.metadata.summary}
+                        descriptionZh={post.metadata.summaryZh}
                         publishedAt={post.metadata.publishedAt}
                         iconUrl={post.metadata.icon}
                         readTime={post.metadata.readTime}
@@ -309,7 +298,7 @@ export default function Page() {
         <div className="flex flex-col items-center">
           <BlurFade delay={BLUR_FADE_DELAY * 10}>
             <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm mb-5">
-              🎮 Epic Trick
+              {t.projects.badge}
             </div>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -318,8 +307,8 @@ export default function Page() {
               className="flex flex-col items-center justify-center w-full"
             >
               <TabsList className="grid w-[400px] grid-cols-2 mb-4">
-                <TabsTrigger value="myworks">Self Grind</TabsTrigger>
-                <TabsTrigger value="clientworks">Client Hustle</TabsTrigger>
+                <TabsTrigger value="myworks">{t.projects.tabMyworks}</TabsTrigger>
+                <TabsTrigger value="clientworks">{t.projects.tabClientworks}</TabsTrigger>
               </TabsList>
               <TabsContent value="myworks">
                 <BlurFade delay={BLUR_FADE_DELAY}>
@@ -327,17 +316,15 @@ export default function Page() {
                     <div className="flex flex-col items-center justify-center space-y-4 text-center">
                       <div className="space-y-2">
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mt-2">
-                          Some of my cool shits
+                          {t.projects.heading}
                         </h2>
                         <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                          I&apos;ve been buildin' some dope Web3 stuff, from
-                          slick dApps to full-blown solutions. Here’s a taste of
-                          my favs – check out more{" "}
+                          {t.projects.description}{" "}
                           <Link
                             href="/projects"
                             className="text-blue-500 hover:underline"
                           >
-                            projects page
+                            {t.projects.linkText}
                           </Link>
                           .
                         </p>
@@ -354,9 +341,12 @@ export default function Page() {
                               href={project.href}
                               active={project.active}
                               archived={project.archived}
+                              forked={project.forked}
                               key={project.title}
                               title={project.title}
+                              titleZh={project.titleZh}
                               description={project.description}
+                              descriptionZh={project.descriptionZh}
                               dates={project.dates}
                               tags={project.technologies}
                               image={project.image}
@@ -376,17 +366,15 @@ export default function Page() {
                     <div className="flex flex-col items-center justify-center space-y-4 text-center">
                       <div className="space-y-2">
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mt-2">
-                          Some of my cool shits
+                          {t.projects.heading}
                         </h2>
                         <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                          I&apos;ve been buildin' some dope Web3 stuff, from
-                          slick dApps to full-blown solutions. Here’s a taste of
-                          my favs – check out more{" "}
+                          {t.projects.description}{" "}
                           <Link
                             href="/projects"
                             className="text-blue-500 hover:underline"
                           >
-                            projects page
+                            {t.projects.linkText}
                           </Link>
                           .
                         </p>
@@ -403,9 +391,12 @@ export default function Page() {
                               href={project.href}
                               active={project.active}
                               archived={project.archived}
+                              forked={project.forked}
                               key={project.title}
                               title={project.title}
+                              titleZh={project.titleZh}
                               description={project.description}
+                              descriptionZh={project.descriptionZh}
                               dates={project.dates}
                               tags={project.technologies}
                               image={project.image}
@@ -430,22 +421,20 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <div className="space-y-3">
               <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                🍺 Messaging Hub 
+                {t.contact.badge}
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Hit me up
+                {t.contact.heading}
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Got something to say? Drop your message below, and let’s talk
-                about future data product, or some tech topic like web3, show me up. 
-                No spam, Friends here and friends there.
+                {t.contact.description}
               </p>
               <div className="pt-10 flex flex-row ">
                 {/* Name Input */}
                 <div className="sm:w-1/3 w-full">
                   <PlaceholdersAndVanishInput
                     type="text"
-                    placeholders={["Ur name dude"]}
+                    placeholders={[t.contact.namePlaceholder]}
                     value={name}
                     onChange={handleNameChange}
                     onSubmit={onSubmit}
@@ -457,12 +446,12 @@ export default function Page() {
                 <div className="sm:w-2/3 w-full mt-0">
                   <PlaceholdersAndVanishInput
                     type="text"
-                    placeholders={placeholders}
+                    placeholders={[...placeholders]}
                     value={mail}
                     onChange={handleChange}
                     onSubmit={onSubmit}
                     disabled={isInputLoading}
-                    submitButton 
+                    submitButton
                     roundedRight
                     triggerDisappear={triggerDisappear}
                   />

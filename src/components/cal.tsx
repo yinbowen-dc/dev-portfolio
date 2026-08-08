@@ -5,9 +5,11 @@ import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { CalendarDays } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useLanguage } from "@/components/providers";
 
 export function ScheduleCallFloat() {
   const { theme } = useTheme();
+  const { lang } = useLanguage();
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "jasonalhilal" });
@@ -31,8 +33,8 @@ export function ScheduleCallFloat() {
     >
       <div className="flex items-center gap-2">
         <p className="group-hover/cal:block hidden duration-300 transition-all ease-out">
-          Schedule Meeting
-        </p>
+            {lang === "zh" ? "预约会议" : "Schedule Meeting"}
+          </p>
         <CalendarDays strokeWidth={1} />
       </div>
     </Button>

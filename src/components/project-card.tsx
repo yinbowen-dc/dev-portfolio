@@ -1,3 +1,4 @@
+"use client";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -11,13 +12,17 @@ import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import { Icons } from "./icons";
+import { useLanguage } from "@/components/providers";
 
 interface Props {
   title: string;
+  titleZh?: string;
   href?: string;
   archived?: boolean;
   active?: boolean;
+  forked?: boolean;
   description: string;
+  descriptionZh?: string;
   dates?: string;
   tags: readonly string[];
   link?: string;
@@ -33,10 +38,13 @@ interface Props {
 
 export function ProjectCard({
   title,
+  titleZh,
   href,
   archived,
   active,
+  forked,
   description,
+  descriptionZh,
   dates,
   tags,
   link,
@@ -45,6 +53,9 @@ export function ProjectCard({
   links,
   className,
 }: Props) {
+  const { lang } = useLanguage();
+  const displayDescription = lang === "zh" && descriptionZh ? descriptionZh : description;
+  const displayTitle = lang === "zh" && titleZh ? titleZh : title;
   return (
     <Card
       className={
@@ -85,7 +96,7 @@ export function ProjectCard({
       </Link>
       <CardHeader className="px-2">
         <div className="space-y-1">
-          <CardTitle className="mt-1 text-base">{title}</CardTitle>
+          <CardTitle className="mt-1 text-base">{displayTitle}</CardTitle>
           {active ? (
            <p className="font-sans text-xs text-green-500 animate-pulse">Developing... </p>
           ):(
@@ -95,7 +106,7 @@ export function ProjectCard({
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
           <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
-            {description}
+            {displayDescription}
           </Markdown>
         </div>
       </CardHeader>
@@ -126,6 +137,12 @@ export function ProjectCard({
               </Link>
             ))}
           </div>
+        )}
+        {forked && (
+          <Badge variant="secondary" className="flex gap-1 px-2 py-1 text-[10px] ml-1">
+            <Icons.github className="size-3" />
+            {lang === "zh" ? "二次开发" : "Fork"}
+          </Badge>
         )}
         {archived && (
               <Badge variant="destructive" className="flex gap-2 px-2 py-1 text-[10px] ml-1">

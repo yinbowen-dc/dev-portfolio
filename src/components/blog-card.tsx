@@ -8,25 +8,33 @@ import { motion } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { useLanguage } from "@/components/providers";
 
 interface BlogCardProps {
   iconUrl: string;
   title: string;
+  titleZh?: string;
   readTime?: string;
   href?: string;
   badges?: readonly string[];
   publishedAt: string;
   description?: string;
+  descriptionZh?: string;
 }
 export const BlogCard = ({
   title,
+  titleZh,
   href,
   badges,
   description,
+  descriptionZh,
   iconUrl,
   readTime,
   publishedAt,
 }: BlogCardProps) => {
+  const { lang } = useLanguage();
+  const displayTitle = lang === "zh" && titleZh ? titleZh : title;
+  const displayDescription = lang === "zh" && descriptionZh ? descriptionZh : description;
   return (
     <Link href={href || "https://www.linkedin.com/in/bowen-yin-317723271/"} className="block cursor-pointer">
       <Card className="flex bg-background py-4">
@@ -40,7 +48,7 @@ export const BlogCard = ({
           <CardHeader>
             <div className="flex items-center justify-between gap-x-2 text-base">
               <h3 className="inline-flex items-center justify-center font-semibold leading-none md:text-base text-sm">
-                {title}
+                {displayTitle}
                 {badges && (
                   <span className="inline-flex gap-x-1 ml-auto">
                     {badges.map((badge, index) => (
@@ -61,17 +69,17 @@ export const BlogCard = ({
                 />
               </h3>
               <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">
-                {readTime} read
+                {lang === "zh" ? `${readTime} 阅读` : `${readTime} read`}
               </div>
             </div>
             {publishedAt && (
               <div className="font-sans text-xs text-muted-foreground my-1">
-                {formatDate(publishedAt)}
+                {formatDate(publishedAt, lang)}
               </div>
             )}
-            {description && (
+            {displayDescription && (
               <div className="font-sans text-xs md:text-sm mr-10">
-                {description}
+                {displayDescription}
               </div>
             )}
           </CardHeader>
