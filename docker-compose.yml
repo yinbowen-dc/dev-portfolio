@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: dev-portfolio:latest
     container_name: dev-portfolio
     restart: unless-stopped
     ports:
