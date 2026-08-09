@@ -17,12 +17,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import { PlaceholdersAndVanishInput } from "@/components/acternityui/vanish-input";
 import { Spotlight } from "@/components/acternityui/spotlight";
 import { PROJECTS } from "@/data/config/projects.config";
 import { BlogCard } from "@/components/blog-card";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { toast } from "sonner";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { GridCards } from "@/components/grid-cards";
 import { ContentPlatforms } from "@/components/content-platforms";
@@ -45,12 +42,6 @@ interface BlogsI {
 export default function Page() {
   const { t } = useLanguage();
   const [blogPosts, setBlogPosts] = useState<BlogsI[]>([]);
-  const [isNsl, setIsNsl] = useState(false);
-  const [isInputLoading, setIsInputLoading] = useState(false);
-  const [mail, setMail] = useState("");
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
-  const [triggerDisappear, setTriggerDisappear] = useState(false);
 
   useEffect(() => {
     const fetchBlogPosts = async () => {
@@ -66,81 +57,18 @@ export default function Page() {
       }
     };
 
-    const checkNewsletterSubscription = () => {
-      if (typeof window !== "undefined") {
-        const newsletterSubscription = localStorage.getItem("devwtf-nsl");
-        if (newsletterSubscription) {
-          setIsNsl(false);
-        } else {
-          setIsNsl(false);
-        }
-      }
-    };
-
-    if (!isNsl && blogPosts.length === 0) {
-      checkNewsletterSubscription();
-    }
-
     if (blogPosts.length === 0) {
       fetchBlogPosts();
     }
-  }, [blogPosts.length, isNsl]);
-
+  }, [blogPosts.length]);
   const [hovering, setHovering] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
-  // 框词轮播
-  const placeholders = t.contact.placeholders as readonly string[];
-
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-  };
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setMail(e.target.value);
-  };
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!name.trim() || !mail.trim()) {
-      toast.error(t.toast.required);
-      return;
-    }
-    setTriggerDisappear(true);
-    setIsInputLoading(true);
-    toast.info(t.toast.sending);
-    try {
-      const response = await fetch("/api/telegram", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, message: mail }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Send Message failed");
-      }
-
-      const data = await response.json();
-      setIsInputLoading(false);
-      console.log("Message successful:", data);
-      toast.success(t.toast.success);
-      localStorage.setItem("devwtf-nsl", data.id);
-      setIsNsl(false);
-      setTriggerDisappear(false);
-    } catch (error) {
-      setIsInputLoading(false);
-      console.error("Error messaging:", error);
-      toast.error(t.toast.error);
-    }
-  };
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -416,51 +344,6 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="newsletter">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 16}>
-            <div className="space-y-3">
-              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                {t.contact.badge}
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                {t.contact.heading}
-              </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                {t.contact.description}
-              </p>
-              <div className="pt-10 flex flex-row ">
-                {/* Name Input */}
-                <div className="sm:w-1/3 w-full">
-                  <PlaceholdersAndVanishInput
-                    type="text"
-                    placeholders={[t.contact.namePlaceholder]}
-                    value={name}
-                    onChange={handleNameChange}
-                    onSubmit={onSubmit}
-                    disabled={isInputLoading}
-                    roundedLeft
-                    triggerDisappear={triggerDisappear}
-                  />
-                </div>
-                <div className="sm:w-2/3 w-full mt-0">
-                  <PlaceholdersAndVanishInput
-                    type="text"
-                    placeholders={[...placeholders]}
-                    value={mail}
-                    onChange={handleChange}
-                    onSubmit={onSubmit}
-                    disabled={isInputLoading}
-                    submitButton
-                    roundedRight
-                    triggerDisappear={triggerDisappear}
-                  />
-                </div>
-              </div>
-            </div>
-          </BlurFade>
-        </div>
-      </section>
     </main>
   );
 }

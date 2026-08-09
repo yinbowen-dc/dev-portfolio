@@ -48,15 +48,24 @@ export const dynamic = "force-dynamic";
 export const GET = async () => {
   const ID = '1280193416617267251';
 
-  const res = await fetch(
-    `https://api.lanyard.rest/v1/users/${ID}`,
-    {
-      headers: {
-        "Content-Type": "application/json",
-        "cache-control": "public, s-maxage=60, stale-while-revalidate=30",
-      },
-    }
-  );
+  try {
+    const res = await fetch(
+      `https://api.lanyard.rest/v1/users/${ID}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-  return NextResponse.json<LanyardResponse>(await res.json());
+    if (!res.ok) {
+      return NextResponse.json({ error: `Lanyard API error: ${res.status}` }, { status: res.status });
+    }
+
+    const data: LanyardResponse = await res.json();
+    return NextResponse.json<LanyardResponse>(data);
+  } catch (error) {
+    console.error("Error fetching Discord status:", error);
+    return NextResponse.json({ error: "Failed to fetch Discord status" }, { status: 500 });
+  }
 };

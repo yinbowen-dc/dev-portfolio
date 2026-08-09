@@ -5,7 +5,6 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { TopNavbar } from "@/components/top-navbar";
 import BottomNavbar from "@/components/bottom-navbar";
-import { ScheduleCallFloat } from "@/components/cal";
 import { Analytics } from "@vercel/analytics/react"
 import { Toaster } from "@/components/ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -110,7 +109,6 @@ export default function RootLayout({
             <div className="block md:hidden">
               <BottomNavbar />
             </div>
-            <ScheduleCallFloat />
             <Analytics/>
             <Toaster />
         </Providers>

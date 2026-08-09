@@ -4,6 +4,11 @@ import { NextResponse } from 'next/server';
 import { getGHStats } from '@/lib/get-gh-stats';
 
 export async function GET() {
-  const data = await getGHStats();
-  return NextResponse.json(data);
+  try {
+    const data = await getGHStats();
+    return NextResponse.json(data);
+  } catch (error) {
+    console.error("Error fetching GitHub stats:", error);
+    return NextResponse.json({ error: "Failed to fetch GitHub stats" }, { status: 500 });
+  }
 }

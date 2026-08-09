@@ -55,6 +55,11 @@ export const getGHStats = cache(
       `,
       { login: "yinbowen-dc" }
     );
+
+    if (!user) {
+      throw new Error("GitHub API returned no user data");
+    }
+
     return {
       issues: user.closedIssues.totalCount + user.openIssues.totalCount,
       prs: user.pullRequests.totalCount,
